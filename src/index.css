@@ -1,13 +1,123 @@
-body {
+/* ===== Global Reset & Base Styles ===== */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* For fixed navbar */
+}
+
+/* ===== Root Variables ===== */
+:root {
+  --primary-gradient: linear-gradient(90deg, #915EFF 0%, #2A77FF 100%);
+  --dark-bg: #050816;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --accent-purple: #915EFF;
+  --accent-blue: #2A77FF;
+}
+
+/* ===== Base Typography ===== */
+body {
+  background: var(--dark-bg);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* ===== Scrollbar Styling ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-gradient);
+  border-radius: 4px;
+}
+
+/* ===== 3D Canvas Container ===== */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Keep behind content */
+}
+
+/* ===== Utility Classes ===== */
+.section-padding {
+  padding: 8rem 2rem;
+  
+  @media (max-width: 768px) {
+    padding: 4rem 1rem;
+  }
+}
+
+.text-gradient {
+  background: var(--primary-gradient);
+  /* Modern browsers */
+  background-clip: text;
+  color: transparent;
+  /* Safari and older Chrome */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Shared styles */
+.loading-screen, .hero {
+  background: #050816;
+  color: white;
+}
+
+/* Loading screen specific */
+.loading-screen {
+  position: fixed;
+  z-index: 9999;
+}
+
+/* Hero specific */
+.hero {
+  position: relative;
+  height: 100vh;
+}
+/* Fix keyframes capitalization */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* ===== Override Three.js Defaults ===== */
+.r3f-overlay {
+  pointer-events: none !important;
+}
+
+/* ===== Font Face Declarations ===== */
+@font-face {
+  font-family: 'Inter';
+  src: url('/public/fonts/Inter/static/Inter_18pt-Bold.woff') format('woff');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/public/fonts/Inter/static/Inter_18pt-Medium.woff') format('woff');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/public/fonts/Inter/static/Inter_18pt-MediumItalic.woff') format('woff');
+  font-weight: 400;
 }
