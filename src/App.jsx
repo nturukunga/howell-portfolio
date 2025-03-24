@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 // Pages
-import Home from './pages/Home';
+import Home from '../src/pages/Home';
 import About from './components/ui/About';
 import Projects from './components/ui/Experience';
 import Contact from './components/ui/Contact';
