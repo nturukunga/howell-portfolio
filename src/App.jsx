@@ -19,6 +19,32 @@ const App = () => {
     };
   }, []);
 
+  // Add scroll functionality
+  useEffect(() => {
+    // Handle hash changes to scroll to the right section
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        // Remove the # from the hash
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    };
+
+    // Handle initial hash on page load
+    handleHashChange();
+    
+    // Add event listener for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+
   return (
     <HashRouter>
       <div className="relative z-0">
@@ -28,17 +54,19 @@ const App = () => {
           <Navbar />
           
           <div className="container mx-auto px-4 text-[#00ff00] pt-16">
-            <MatrixHero />
+            <div id="home">
+              <MatrixHero />
+            </div>
             
-            <div className="section-spacing">
+            <div id="about" className="section-spacing">
               <About />
             </div>
             
-            <div className="section-spacing">
+            <div id="skills" className="section-spacing">
               <MatrixSkills />
             </div>
             
-            <div className="section-spacing">
+            <div id="projects" className="section-spacing">
               <Projects />
             </div>
             

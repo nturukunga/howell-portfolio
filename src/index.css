@@ -384,3 +384,10 @@ section {
 .section-spacing {
   margin-bottom: 8rem;
 }
+
+/* Add padding to the top of each section to account for the fixed navbar */
+#home, #about, #skills, #projects, #contact {
+  padding-top: 70px;
+  margin-top: -70px; /* Offset the padding for positioning */
+  scroll-margin-top: 70px; /* Modern browsers */
+}
