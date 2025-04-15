@@ -2,65 +2,80 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-    <!-- SEO Meta Tags -->
-    <meta name="theme-color" content="#050816" />
-    <meta name="description" content="Howell Munene - Software Developer & System Administrator Portfolio | Nairobi, Kenya" />
-    <meta name="keywords" content="software developer, system administrator, Nairobi, Kenya, web development, Java, .NET, JavaScript" />
-    <meta name="author" content="Howell Munene" />
-    
-    <!-- Open Graph/Facebook Meta Tags -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Howell Munene | Software Developer Portfolio" />
-    <meta property="og:description" content="Aspiring Software Developer & System Administrator showcasing technical skills and projects" />
-    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
-    
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Howell Munene | Software Developer Portfolio" />
-    <meta name="twitter:description" content="Aspiring Software Developer & System Administrator showcasing technical skills and projects" />
-    <meta name="twitter:image" content="%PUBLIC_URL%/og-image.jpg" />
-
-    <!-- Icons & Manifest -->
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Howell Munene's portfolio - Software Developer based in Nairobi, Kenya"
+    />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    
-    <!-- Font Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
-    <!-- Page Title -->
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Howell Munene | Software Developer</title>
-
-    <!-- Optional: Add analytics script here -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script> -->
+    <style>
+      /* Fallback styles in case CSS doesn't load */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inconsolata', monospace, -apple-system, sans-serif;
+        background-color: #000;
+        color: #00ff00;
+      }
+      #loading-fallback {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+        z-index: 9999;
+      }
+      .loading-text {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        animation: blink 1s infinite;
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+    </style>
   </head>
   <body>
-    <noscript>
-      <strong>
-        This website requires JavaScript to function properly. 
-        Please enable JavaScript in your browser settings.
-      </strong>
-    </noscript>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <!-- Fallback loading screen that will be replaced when React loads -->
+    <div id="loading-fallback">
+      <div class="loading-text">> Initializing Portfolio...</div>
+      <div>Howell Munene | Software Developer</div>
+    </div>
+    
     <div id="root"></div>
     
-    <!-- Optional: Loading animation for noscript users -->
-    <noscript>
-      <style>
-        #root { display: none; }
-        body::after {
-          content: "JavaScript is required to view this portfolio";
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-          font-size: 1.2rem;
-          color: white;
-          background: #050816;
+    <script>
+      // Remove the loading fallback once the app loads
+      window.onload = function() {
+        setTimeout(function() {
+          const fallback = document.getElementById('loading-fallback');
+          if (fallback && fallback.parentNode) {
+            fallback.parentNode.removeChild(fallback);
+          }
+        }, 500); // Allow a small delay to prevent flash
+      };
+      
+      // Fallback to remove loading screen if app doesn't load within 5 seconds
+      setTimeout(function() {
+        const fallback = document.getElementById('loading-fallback');
+        const root = document.getElementById('root');
+        if (fallback && fallback.parentNode && root && root.children.length > 0) {
+          fallback.parentNode.removeChild(fallback);
         }
-      </style>
-    </noscript>
+      }, 5000);
+    </script>
   </body>
 </html>
