@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/howell-portfolio/static/css/main.83ee876f.css",
-    "main.js": "/howell-portfolio/static/js/main.db714de9.js",
+    "main.css": "/howell-portfolio/static/css/main.8593d8e7.css",
+    "main.js": "/howell-portfolio/static/js/main.8e06e49d.js",
     "static/js/453.d05d2a19.chunk.js": "/howell-portfolio/static/js/453.d05d2a19.chunk.js",
     "static/media/Inter_18pt-MediumItalic.woff": "/howell-portfolio/static/media/Inter_18pt-MediumItalic.0c8dd49a92562d446d3b.woff",
     "static/media/Inter_18pt-Bold.woff": "/howell-portfolio/static/media/Inter_18pt-Bold.934ca051dc94cbb68779.woff",
     "static/media/Inter_18pt-Medium.woff": "/howell-portfolio/static/media/Inter_18pt-Medium.c51b145d8cf66a74cc74.woff",
     "index.html": "/howell-portfolio/index.html",
-    "main.83ee876f.css.map": "/howell-portfolio/static/css/main.83ee876f.css.map",
-    "main.db714de9.js.map": "/howell-portfolio/static/js/main.db714de9.js.map",
+    "main.8593d8e7.css.map": "/howell-portfolio/static/css/main.8593d8e7.css.map",
+    "main.8e06e49d.js.map": "/howell-portfolio/static/js/main.8e06e49d.js.map",
     "453.d05d2a19.chunk.js.map": "/howell-portfolio/static/js/453.d05d2a19.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.83ee876f.css",
-    "static/js/main.db714de9.js"
+    "static/css/main.8593d8e7.css",
+    "static/js/main.8e06e49d.js"
   ]
 }
