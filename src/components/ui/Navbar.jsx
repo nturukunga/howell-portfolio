@@ -7,6 +7,7 @@ const Navbar = () => {
 
     const toggleMenu = () => setIsOpen((prev) => !prev);
 
+    // Use anchor links for hash-based navigation which works better in static deployments
     return (
         <nav className="navbar">
             <div className="nav-container">
@@ -16,24 +17,29 @@ const Navbar = () => {
                 </button>
                 <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
                     <li className="nav-item">
-                        <Link to="/" className="nav-link" onClick={() => setIsOpen(false)}>
+                        <a href="#/" className="nav-link" onClick={() => setIsOpen(false)}>
                             Home
-                        </Link>
+                        </a>
                     </li>
                     <li className="nav-item">
-                        <Link to="/about" className="nav-link" onClick={() => setIsOpen(false)}>
+                        <a href="#about" className="nav-link" onClick={() => setIsOpen(false)}>
                             About
-                        </Link>
+                        </a>
                     </li>
                     <li className="nav-item">
-                        <Link to="/projects" className="nav-link" onClick={() => setIsOpen(false)}>
+                        <a href="#skills" className="nav-link" onClick={() => setIsOpen(false)}>
+                            Skills
+                        </a>
+                    </li>
+                    <li className="nav-item">
+                        <a href="#projects" className="nav-link" onClick={() => setIsOpen(false)}>
                             Projects
-                        </Link>
+                        </a>
                     </li>
                     <li className="nav-item">
-                        <Link to="/contact" className="nav-link" onClick={() => setIsOpen(false)}>
+                        <a href="#contact" className="nav-link" onClick={() => setIsOpen(false)}>
                             Contact
-                        </Link>
+                        </a>
                     </li>
                 </ul>
             </div>

@@ -40,11 +40,30 @@
         margin-bottom: 1rem;
         animation: blink 1s infinite;
       }
+      .fail-message {
+        display: none;
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #00ff00;
+      }
       @keyframes blink {
         0%, 100% { opacity: 1; }
         50% { opacity: 0; }
       }
     </style>
+    <!-- Fix for potential MIME type issues -->
+    <script type="text/javascript">
+      // Ensure we have proper error handling before React loads
+      window.addEventListener('error', function(e) {
+        console.error('Global error caught:', e.message);
+        // Try to show error info if the app fails to load
+        setTimeout(function() {
+          if (document.getElementById('root').children.length === 0) {
+            document.getElementById('fail-message').style.display = 'block';
+          }
+        }, 5000);
+      });
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -53,6 +72,9 @@
     <div id="loading-fallback">
       <div class="loading-text">> Initializing Portfolio...</div>
       <div>Howell Munene | Software Developer</div>
+      <div id="fail-message" class="fail-message">
+        If the site isn't loading properly, try refreshing the page or <a href="/#/" style="color:#00ff00">click here to use hash routing</a>.
+      </div>
     </div>
     
     <div id="root"></div>
@@ -76,6 +98,14 @@
           fallback.parentNode.removeChild(fallback);
         }
       }, 5000);
+      
+      // Final safety timeout - if nothing happens after 10 seconds, show an error message
+      setTimeout(function() {
+        if (document.getElementById('root').children.length === 0) {
+          console.error("Application failed to load after 10 seconds");
+          document.getElementById('fail-message').style.display = 'block';
+        }
+      }, 10000);
     </script>
   </body>
 </html>

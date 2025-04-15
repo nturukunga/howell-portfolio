@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 // Components
 import MatrixRain from "./components/MatrixRain";
@@ -20,7 +20,7 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="relative z-0">
         <MatrixRain />
         
@@ -95,7 +95,7 @@ const App = () => {
           </div>
         </div>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
