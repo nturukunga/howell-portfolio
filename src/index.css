@@ -250,7 +250,13 @@ a:hover::after {
   padding: 1rem;
   border-radius: 5px;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+}
+
+.matrix-terminal:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
 }
 
 .matrix-terminal::before {
@@ -277,7 +283,7 @@ a:hover::after {
   border: 1px solid var(--matrix-green, #00ff00);
   border-radius: 5px;
   padding: 1.5rem;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
   height: 100%;
   backdrop-filter: blur(3px);
@@ -288,6 +294,7 @@ a:hover::after {
 .skill-card:hover {
   box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
   transform: translateY(-5px);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .skill-content {
@@ -330,7 +337,7 @@ a:hover::after {
   border: 1px solid var(--matrix-green, #00ff00);
   border-radius: 5px;
   padding: 1.5rem;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(3px);
   height: 100%;
   transition: all 0.3s ease;
@@ -339,6 +346,7 @@ a:hover::after {
 .project-card:hover {
   box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
   transform: translateY(-5px);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /* Section Spacing */

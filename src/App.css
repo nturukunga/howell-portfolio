@@ -85,7 +85,7 @@
 
 /* Apply Matrix theme to existing components */
 nav {
-  background-color: rgba(0, 0, 0, 0.8) !important;
+  background-color: rgba(0, 0, 0, 0) !important;
   border-bottom: 1px solid var(--matrix-green) !important;
 }
 

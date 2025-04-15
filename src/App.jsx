@@ -12,7 +12,6 @@ import About from "./components/About";
 import "./App.css";
 
 const App = () => {
-  // Make body background black for Matrix theme
   useEffect(() => {
     document.body.style.backgroundColor = "#000";
     return () => {
@@ -48,7 +47,7 @@ const App = () => {
               <h2 className="text-3xl font-bold mb-16 matrix-flicker text-[#00ff00] text-center">
                 Contact Me
               </h2>
-              <div className="matrix-terminal p-6 bg-opacity-50 backdrop-filter backdrop-blur-sm">
+              <div className="matrix-terminal p-6 bg-opacity-50 backdrop-filter backdrop-blur-sm" style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}>
                 <p className="mb-10 text-center">Initialize secure communication protocol...</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 contact-grid">
                   <div className="flex items-center gap-4">
