@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './Navbar.css'; // Ensure you create this CSS file for styles
 
 const Navbar = () => {
