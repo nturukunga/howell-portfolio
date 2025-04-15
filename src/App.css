@@ -36,3 +36,134 @@
     transform: rotate(360deg);
   }
 }
+
+/* Matrix Theme Styles */
+:root {
+  --matrix-green: #00ff00;
+  --matrix-dark-green: #003b00;
+  --matrix-black: #000;
+  --matrix-light-green: rgba(0, 255, 0, 0.1);
+}
+
+.matrix-terminal {
+  font-family: 'Inconsolata', monospace;
+  border: 1px solid var(--matrix-green);
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  position: relative;
+  padding: 1rem;
+  color: var(--matrix-green);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+}
+
+.matrix-terminal::before {
+  content: '>';
+  color: var(--matrix-green);
+  margin-right: 0.5rem;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Matrix text flicker animation */
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+.matrix-flicker {
+  animation: flicker 2s infinite;
+}
+
+/* Apply Matrix theme to existing components */
+nav {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  border-bottom: 1px solid var(--matrix-green) !important;
+}
+
+.nav-links a {
+  color: var(--matrix-green) !important;
+  text-shadow: 0 0 5px var(--matrix-green);
+}
+
+.section-container {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  border: 1px solid var(--matrix-green) !important;
+  color: var(--matrix-green) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--matrix-green) !important;
+}
+
+p {
+  color: var(--matrix-green) !important;
+}
+
+button, .btn {
+  background-color: transparent !important;
+  color: var(--matrix-green) !important;
+  border: 1px solid var(--matrix-green) !important;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--matrix-green) !important;
+  color: var(--matrix-black) !important;
+}
+
+input, textarea {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  color: var(--matrix-green) !important;
+  border: 1px solid var(--matrix-green) !important;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 10px var(--matrix-green) !important;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  border-top: 1px solid var(--matrix-green) !important;
+  color: var(--matrix-green) !important;
+}
+
+.matrix-terminal-content {
+  font-family: 'Inconsolata', monospace;
+  padding: 1rem;
+  position: relative;
+  color: var(--matrix-green);
+}
+
+.matrix-terminal-content::before {
+  content: '>';
+  color: var(--matrix-green);
+  margin-right: 0.5rem;
+  position: absolute;
+  left: 0;
+  top: 1rem;
+}
+
+/* Make slider buttons green */
+input[type="range"]::-webkit-slider-thumb {
+  background-color: var(--matrix-green) !important;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background-color: var(--matrix-green) !important;
+}
+
+input[type="range"]::-ms-thumb {
+  background-color: var(--matrix-green) !important;
+}
+
+input[type="range"] {
+  accent-color: var(--matrix-green);
+}

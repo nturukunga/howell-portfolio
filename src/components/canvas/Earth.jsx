@@ -1,6 +1,6 @@
 // src/components/canvas/Earth.jsx
 import React, { useRef } from 'react';
-import { useFrame, useLoader } from '@react-three/fiber';
+import { useFrame, useLoader, Canvas } from '@react-three/fiber';
 import { TextureLoader } from 'three/src/loaders/TextureLoader';
 import { OrbitControls, Sphere } from '@react-three/drei';
 import * as THREE from 'three';

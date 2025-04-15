@@ -1,0 +1,53 @@
+.hero-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding: 0 2rem;
+}
+
+.matrix-content {
+  position: relative;
+  z-index: 5;
+}
+
+.name-heading {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--matrix-green, #00ff00);
+  margin-bottom: 1rem;
+  animation: flicker 2s infinite;
+  font-family: 'Inconsolata', monospace;
+}
+
+.title-heading {
+  font-size: 2rem;
+  color: var(--matrix-green, #00ff00);
+  margin-bottom: 2rem;
+  font-family: 'Inconsolata', monospace;
+  position: relative;
+  display: inline-block;
+}
+
+.title-heading::before {
+  content: '>';
+  margin-right: 0.5rem;
+  animation: cursor-blink 1.5s steps(1) infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .name-heading {
+    font-size: 2.5rem;
+  }
+  
+  .title-heading {
+    font-size: 1.5rem;
+  }
+} 

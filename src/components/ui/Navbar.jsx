@@ -10,9 +10,7 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="nav-container">
-                <Link to="/" className="nav-logo">
-                    Howell Portfolio
-                </Link>
+                {/* Removed logo as requested */}
                 <button className="mobile-menu-icon" onClick={toggleMenu}>
                     {isOpen ? '✖' : '☰'}
                 </button>
