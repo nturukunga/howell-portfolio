@@ -50,9 +50,77 @@
         0%, 100% { opacity: 1; }
         50% { opacity: 0; }
       }
+      
+      /* Matrix background fallback */
+      #matrix-fallback {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.5;
+      }
     </style>
-    <!-- Fix for potential MIME type issues -->
+    <!-- Critical scripts to ensure page displays something -->
     <script type="text/javascript">
+      // Create simple matrix rain as fallback if canvas fails
+      window.addEventListener('load', function() {
+        // Check if root is empty after 2 seconds
+        setTimeout(function() {
+          if (document.getElementById('root').children.length === 0) {
+            console.log('Page did not load properly, showing fallback');
+            
+            // Show error message
+            document.getElementById('fail-message').style.display = 'block';
+            
+            // Create simple matrix fallback
+            var canvas = document.createElement('canvas');
+            canvas.id = 'matrix-fallback';
+            document.body.appendChild(canvas);
+            
+            try {
+              initMatrixFallback(canvas);
+            } catch(e) {
+              console.error('Failed to initialize matrix fallback:', e);
+            }
+          }
+        }, 2000);
+      });
+      
+      // Simple Matrix effect as fallback
+      function initMatrixFallback(canvas) {
+        var ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        var fontSize = 14;
+        var columns = Math.ceil(canvas.width / fontSize);
+        var drops = Array(columns).fill(1);
+        
+        function draw() {
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          
+          ctx.fillStyle = 'rgba(0, 255, 0, 0.35)';
+          ctx.font = fontSize + 'px monospace';
+          
+          for(var i = 0; i < drops.length; i++) {
+            var text = chars[Math.floor(Math.random() * chars.length)];
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+            
+            if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+              drops[i] = 0;
+            }
+            
+            drops[i]++;
+          }
+        }
+        
+        setInterval(draw, 33);
+      }
+      
       // Ensure we have proper error handling before React loads
       window.addEventListener('error', function(e) {
         console.error('Global error caught:', e.message);
@@ -73,7 +141,7 @@
       <div class="loading-text">> Initializing Portfolio...</div>
       <div>Howell Munene | Software Developer</div>
       <div id="fail-message" class="fail-message">
-        If the site isn't loading properly, try refreshing the page or <a href="/#/" style="color:#00ff00">click here to use hash routing</a>.
+        If the site isn't loading properly, try refreshing the page or visiting <a href="/" style="color:#00ff00">the homepage</a>.
       </div>
     </div>
     

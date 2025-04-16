@@ -2,6 +2,7 @@
   "name": "howell-portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@react-three/drei": "^9.63.0",
     "@react-three/fiber": "^8.14.0",
@@ -24,7 +25,7 @@
     "start": "react-scripts start",
     "test": "react-scripts test",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -b main -r https://github.com/nturukunga/howell-portfolio.git",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build && copy build\\index.html build\\200.html && copy build\\index.html build\\404.html",
     "eject": "react-scripts eject"
   },

@@ -39,6 +39,11 @@ const ErrorFallback = () => {
   );
 };
 
+// For GitHub Pages and deployment debugging
+console.log('Environment: ', process.env.NODE_ENV);
+console.log('Base URL: ', window.location.href);
+console.log('Path: ', window.location.pathname);
+
 try {
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
