@@ -26,6 +26,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build -b main -r https://github.com/nturukunga/howell-portfolio.git",
     "build": "react-scripts build",
+    "postbuild": "cp build/index.html build/200.html && cp build/index.html build/404.html",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
