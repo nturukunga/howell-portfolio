@@ -6,7 +6,15 @@ const Navbar = () => {
 
     const toggleMenu = () => setIsOpen((prev) => !prev);
 
-    // Use anchor links for hash-based navigation which works better in static deployments
+    // Handle scroll to section instead of hash navigation
+    const scrollToSection = (sectionId) => {
+        setIsOpen(false);
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <nav className="navbar">
             <div className="nav-container">
@@ -16,27 +24,27 @@ const Navbar = () => {
                 </button>
                 <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
                     <li className="nav-item">
-                        <a href="#/" className="nav-link" onClick={() => setIsOpen(false)}>
+                        <a href="#/" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="nav-link">
                             Home
                         </a>
                     </li>
                     <li className="nav-item">
-                        <a href="#about" className="nav-link" onClick={() => setIsOpen(false)}>
+                        <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }} className="nav-link">
                             About
                         </a>
                     </li>
                     <li className="nav-item">
-                        <a href="#skills" className="nav-link" onClick={() => setIsOpen(false)}>
+                        <a href="#skills" onClick={(e) => { e.preventDefault(); scrollToSection('skills'); }} className="nav-link">
                             Skills
                         </a>
                     </li>
                     <li className="nav-item">
-                        <a href="#projects" className="nav-link" onClick={() => setIsOpen(false)}>
+                        <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }} className="nav-link">
                             Projects
                         </a>
                     </li>
                     <li className="nav-item">
-                        <a href="#contact" className="nav-link" onClick={() => setIsOpen(false)}>
+                        <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="nav-link">
                             Contact
                         </a>
                     </li>
