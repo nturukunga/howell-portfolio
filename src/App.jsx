@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 
-// Components
 import MatrixRain from "./components/MatrixRain";
 import Navbar from "./components/ui/Navbar";
 import MatrixHero from "./components/MatrixHero";
@@ -19,13 +18,12 @@ const App = () => {
     };
   }, []);
 
-  // Add scroll functionality
   useEffect(() => {
-    // Handle hash changes to scroll to the right section
+
     const handleHashChange = () => {
       const hash = window.location.hash;
       if (hash) {
-        // Remove the # from the hash
+
         const id = hash.replace('#', '');
         const element = document.getElementById(id);
         if (element) {
@@ -34,10 +32,8 @@ const App = () => {
       }
     };
 
-    // Handle initial hash on page load
     handleHashChange();
     
-    // Add event listener for hash changes
     window.addEventListener('hashchange', handleHashChange);
     
     return () => {

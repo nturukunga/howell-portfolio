@@ -7,7 +7,6 @@ const Projects = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Using your actual GitHub username
     fetch('https://api.github.com/users/nturukunga/repos')
       .then(response => {
         if (!response.ok) {
@@ -16,7 +15,6 @@ const Projects = () => {
         return response.json();
       })
       .then(data => {
-        // Sort projects by most recently updated
         const sortedProjects = data.sort((a, b) => 
           new Date(b.updated_at) - new Date(a.updated_at)
         );

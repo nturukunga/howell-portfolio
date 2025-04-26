@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { SKILLS } from '../constants';
 
-// Define skill descriptions
 const skillDescriptions = {
   "Java": "Strong foundation in Java development with focus on application building",
   ".NET": "Experience with .NET framework for Windows applications",
@@ -20,7 +19,6 @@ const skillDescriptions = {
 };
 
 const MatrixSkills = () => {
-  // If SKILLS is not defined in constants, use these fallback skills
   const skills = SKILLS || [
     "JavaScript/TypeScript",
     "React/Next.js", 

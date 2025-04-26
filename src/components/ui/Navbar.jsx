@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import './Navbar.css'; // Ensure you create this CSS file for styles
+import './Navbar.css'; 
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => setIsOpen((prev) => !prev);
 
-    // Handle scroll to section instead of hash navigation
     const scrollToSection = (sectionId) => {
         setIsOpen(false);
         const element = document.getElementById(sectionId);
@@ -18,7 +17,6 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="nav-container">
-                {/* Removed logo as requested */}
                 <button className="mobile-menu-icon" onClick={toggleMenu}>
                     {isOpen ? '✖' : '☰'}
                 </button>
