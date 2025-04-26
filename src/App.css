@@ -151,7 +151,6 @@ footer {
   top: 1rem;
 }
 
-/* Make slider buttons green */
 input[type="range"]::-webkit-slider-thumb {
   background-color: var(--matrix-green) !important;
 }
