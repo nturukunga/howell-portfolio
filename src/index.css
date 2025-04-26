@@ -7,7 +7,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px; /* For fixed navbar */
+  scroll-padding-top: 100px; 
 }
 
 /* ===== Root Variables ===== */
@@ -57,7 +57,7 @@ canvas {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1; /* Keep behind content */
+  z-index: -1; 
 }
 
 /* ===== Utility Classes ===== */
@@ -71,10 +71,8 @@ canvas {
 
 .text-gradient {
   background: var(--primary-gradient);
-  /* Modern browsers */
   background-clip: text;
   color: transparent;
-  /* Safari and older Chrome */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
